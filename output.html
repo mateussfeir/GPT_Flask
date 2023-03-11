@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Sentiment Analyzer</title>
+</head>
+<body>
+    <h1>News Sentiment Analyzer</h1>
+    {% if news %}
+        <table>
+            <thead>
+                <tr>
+                    <th>News Title</th>
+                    <th>Source</th>
+                    <th>URL</th>
+                    <th>Publish Date</th>
+                    <th>Sentiment</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in news %}
+                    <tr>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.source }}</td>
+                        <td><a href="{{ item.url }}">{{ item.url }}</a></td>
+                        <td>{{ item.published }}</td>
+                        <td>{{ item.sentiment }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</body>
+</html>
